@@ -1,0 +1,82 @@
+<form (submit)="SendData()" [formGroup]="form">
+
+    <mat-form-field appearance="outline">
+
+        <mat-label>Cédula ej: 00000000000*</mat-label>
+
+        <input (keypress)="OnlyNumb($event)" formControlName="IdentificationCard" matInput>
+
+        <met-error *ngIf="form.invalid">{{ErrorFields()}}</met-error>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+        <mat-label>Nombre*</mat-label>
+        <input formControlName="Name" matInput>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+        <mat-label>Apellido*</mat-label>
+        <input formControlName="LastName" matInput>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+        <mat-label>Nacionalidad</mat-label>
+        <input formControlName="Nacionality" matInput>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+        <mat-label>Sexo</mat-label>
+
+        <select formControlName="Sex" matNativeControl required>
+        <option value="M">Masculimo</option>
+        <option value="F">Femenino</option>
+        </select>
+
+    </mat-form-field>
+
+    <mat-form-field id="NSS" appearance="outline">
+
+        <mat-label>Número de seguridad social*</mat-label>
+        <input (keypress)="OnlyNumb($event)" formControlName="SocialSecurityNumber" matInput>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-form-field">
+
+        <mat-label>Fecha de registro*</mat-label>
+
+        <input type="date" formControlName="RegistrationDate" matInput>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+        <mat-label>Plan</mat-label>
+
+        <mat-select formControlName="PlanId">
+
+            <mat-option *ngFor="let i of Plans" [value]="i.Id">{{i.PlanName}}</mat-option>
+
+        </mat-select>
+
+    </mat-form-field>
+
+    <div>
+
+        <button [disabled]="form.disabled" mat-flat-button color="primary">
+        Crear
+        </button>
+
+        <a mat-stroked-button routerLink="../">Canselar</a>
+
+    </div>
+
+</form>

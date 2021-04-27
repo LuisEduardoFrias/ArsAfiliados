@@ -1,0 +1,34 @@
+h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+form {
+    margin-left: 20px;
+}
+
+mat-form-field {
+    margin: 5px;
+}
+
+button {
+    margin-right: 1rem;
+}
+
+#NSS {
+    width: 250px;
+}
+
+#Plan {
+    display: inline;
+    position: relative;
+    margin: 5px;
+    bottom: 5px;
+    padding: 19px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px 5px;
+}
+
+#Plan mat-label {
+    margin-right: 10px;
+}

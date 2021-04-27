@@ -1,0 +1,32 @@
+div {
+    margin: 20px;
+}
+
+mat-toolbar {
+    background: black;
+    margin-bottom: 30px;
+}
+
+img {
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
+}
+
+label {
+    position: relative;
+    top: 10px;
+    color: white;
+    margin-left: 10px;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+app-container {
+    width: Calc(85% - 18px);
+    height: Calc(100vh - 133px);
+    margin-top: 5px;
+    border: 1px solid lightgray;
+    border-radius: 0px 15px 15px 0px;
+    float: right;
+}

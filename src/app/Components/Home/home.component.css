@@ -1,0 +1,24 @@
+img {
+    height: 100%;
+    width: 100%;
+    border-radius: 0px 15px 15px 0px;
+}
+
+label {
+    position: absolute;
+    z-index: 9;
+}
+
+#eslogan {
+    font-size: 25px;
+    left: 30%;
+    top: 30%;
+    color: rgb(163, 132, 30);
+}
+
+#h1 {
+    font-size: 70px;
+    left: 30%;
+    top: 20%;
+    color: rgb(163, 132, 30);
+}
