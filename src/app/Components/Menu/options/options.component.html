@@ -1,0 +1,23 @@
+<mat-expansion-panel hideToggle *ngFor='let opM of OptionsMenu'>
+
+    <mat-expansion-panel-header routerLink="{{opM.RouterLink}}">
+
+        <mat-panel-title>
+            <mat-icon>{{opM.Icon}}</mat-icon> {{opM.MenuName}}
+        </mat-panel-title>
+
+    </mat-expansion-panel-header>
+
+    <div>
+
+        <mat-expansion-panel-header routerLink="{{op.RouterLink}}" *ngFor="let op of opM.SubMenu">
+
+            <mat-panel-title>
+                <mat-icon>{{op.Icon}}</mat-icon> {{op.MenuName}}
+            </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+    </div>
+
+</mat-expansion-panel>

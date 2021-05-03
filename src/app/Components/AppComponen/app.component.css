@@ -7,10 +7,9 @@ mat-toolbar {
     margin-bottom: 30px;
 }
 
-img {
+#logo {
     width: 200px;
     height: 100px;
-    cursor: pointer;
 }
 
 label {
@@ -22,11 +21,47 @@ label {
     font-family: 'Times New Roman', Times, serif;
 }
 
-app-container {
-    width: Calc(85% - 18px);
+.container2 {
+    width: 100%;
     height: Calc(100vh - 133px);
+    margin-top: 5px;
+    border: 1px solid lightgray;
+    border-radius: 15px 15px 15px 15px;
+    float: right;
+}
+
+.container {
+    width: Calc(85% - 18px);
+    height: Calc(100vh - 140px);
     margin-top: 5px;
     border: 1px solid lightgray;
     border-radius: 0px 15px 15px 0px;
     float: right;
+}
+
+#DivProfile {
+    color: white;
+    position: absolute;
+    right: -10px;
+}
+
+#ImgProfile {
+    width: 50px;
+    height: 50px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+mat-label {
+    margin: 3px;
+}
+
+#DivProfile .laberProfile {
+    cursor: pointer;
+}
+
+#DivProfile .laberProfile:hover {
+    color: grey;
 }

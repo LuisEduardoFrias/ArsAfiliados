@@ -4,15 +4,25 @@
 
 <mat-toolbar>
 
-    <img routerLink="" src="../../../assets/images/Logo.png" alt="Logo">
+    <img routerLink="" id="logo" [ngClass]="{cursor: auth.login}" src="../../../assets/images/Logo.png" alt="Logo">
     <label for="a">Afiliados</label>
+
+    <div id="DivProfile" (mouseleave)="MouseLeaveChangeOpcion()">
+
+        <mat-label *ngIf="opcion">{{UserName}}</mat-label>
+
+        <mat-label class="laberProfile" *ngIf="opcion && auth.login" (click)="LogOut()">Cerrar sesión</mat-label>
+
+        <img id="ImgProfile" [ngClass]="{cursor: auth.login}" (click)="ClickChangeOpcion()" src="../../../assets/images/Profile.png" alt="Profile" />
+
+    </div>
 
 </mat-toolbar>
 
-<app-menu>
+<app-menu *ngIf="auth.login">
 
 </app-menu>
 
-<app-container>
+<app-container [ngClass]="{container2: !auth.login}" [ngClass]="{container: auth.login}">
 
 </app-container>

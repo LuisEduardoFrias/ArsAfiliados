@@ -1,0 +1,34 @@
+<form [formGroup]="form" (submit)="CreateAccount()">
+
+    <mat-form-field appearance="outline">
+        <mat-label>Primer Nombre</mat-label>
+        <input formControlName="Name" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Primer Apellido</mat-label>
+        <input formControlName="LastName" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <input formControlName="Email" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" formControlName="Password" matInput>
+    </mat-form-field>
+
+
+    <div>
+
+        <button [disabled]="form.disabled" mat-flat-button color="primary">
+        Crear
+        </button>
+
+        <a mat-stroked-button routerLink="../">Canselar</a>
+
+    </div>
+
+</form>

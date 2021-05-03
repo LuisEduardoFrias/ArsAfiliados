@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ArsAfiliados';
+  
+  opcion : boolean = false;
+
+  UserName : string = '';
+
+  constructor(public auth : AuthService) {
+    
+  }
+
+  ClickChangeOpcion() {
+    this.opcion = !this.opcion;
+  }
+
+  MouseLeaveChangeOpcion() {
+    if (this.opcion == true)
+      this.opcion = !this.opcion;
+  }
+
 }

@@ -2,53 +2,42 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Utilities } from 'src/app/Utilities/utilities';
-import { Plan } from 'src/app/Models/plan.model';
-import { Affiliate } from 'src/app/Models/affiliate.model';
 import { PlanService } from 'src/app/Services/plan.service';
+import { DatePipe } from '@angular/common';
+import { CreateAffiliate } from 'src/app/Models/affiliate/CreateAffiliate.model';
 
 @Component({
   selector: 'app-form-affiliate',
   templateUrl: './form-affiliate.component.html',
-  styleUrls: ['./form-affiliate.component.css']
+  styleUrls: ['./form-affiliate.component.css'],
+  providers: [DatePipe]
 })
 export class FormAffiliateComponent extends Utilities implements OnInit {
 
-  constructor(private router: Router, private formbuild: FormBuilder, private planService: PlanService) {
+  constructor(private router: Router, private formbuild: FormBuilder, private planService: PlanService, private datePipe: DatePipe) {
     super();
   }
 
   @Output()
-  OnSubmit: EventEmitter<Affiliate> = new EventEmitter<Affiliate>();
+  OnSubmit: EventEmitter<CreateAffiliate> = new EventEmitter<CreateAffiliate>();
 
-  Plans = [
-    new Plan(1,"Básico",   10000, null, true)
-  , new Plan(2,"MAX",      15000, null, true)
-  , new Plan(3,"X",        20000, null, true)
-  , new Plan(4,"PLUS",     25000, null, true)
-  , new Plan(5,"X MAX",    30000, null, true)
-  , new Plan(6,"PLUS MAX", 45000, null, true)
-  , new Plan(7,"X PLUS",   60000, null, true)]
+  Plans = [];
   
   form: FormGroup;
 
   ngOnInit(): void {
   
-    this.planService.GetPlans().subscribe(observer =>
+    this.planService.GetPlansWhereStatusTrue().subscribe(observer =>
     {
-      debugger;
-
-      //this.Plans = observer;
-      
-      
+      this.Plans = observer;
     })
 
     this.form = this.formbuild.group(
       {
-        Id: 0,
         IdentificationCard:   ['', {Validators:[Validators.required, Validators.max(11)]}],
         Name:                 ['', {Validators:[Validators.required, Validators.max(25)]} ],
         LastName:             ['', {Validators:[Validators.required, Validators.max(25)]}],
-        DateTime: Date.now(),
+        Date: this.datePipe.transform(new Date(), 'yyyy-MM-dd'),
         Nacionality: '',
         Sex:                  ['', {Validators: [Validators.required]}],
         SocialSecurityNumber: ['', {Validators: [Validators.required]}],
@@ -61,6 +50,7 @@ export class FormAffiliateComponent extends Utilities implements OnInit {
 
   ErrorFields(field: string)
   {
+
     if (field === "IdentificationCard") {
       
       var identificationCard = this.form.get("IdentificationCard");

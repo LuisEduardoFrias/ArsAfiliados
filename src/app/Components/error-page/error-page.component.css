@@ -1,0 +1,17 @@
+div {
+    position: absolute;
+    width: 1100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+span {
+    font-size: 70px;
+}
+
+span span {
+    font-size: 120px;
+    color: rgba(145, 111, 0, 0.83);
+    text-shadow: 3px 3px 3px rgb(0, 0, 0);
+}

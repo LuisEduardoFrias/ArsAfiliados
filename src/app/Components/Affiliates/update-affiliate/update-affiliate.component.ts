@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Affiliate } from 'src/app/Models/affiliate.model';
+import { UpdateAffiliate } from 'src/app/Models/affiliate/UpdateAffiliate.model';
 
 @Component({
   selector: 'app-update-affiliate',
@@ -13,8 +13,7 @@ export class UpdateAffiliateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  UpdateAffiliate(affiliate: Affiliate){
-  
+  UpdateAffiliate(affiliate: UpdateAffiliate){
     console.log(affiliate);
 
   }

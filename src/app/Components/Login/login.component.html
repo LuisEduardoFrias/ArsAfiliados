@@ -1,0 +1,23 @@
+<Label id="h1">Ars Afiliados</Label>
+<Label id="eslogan">Cuidando tu familia</Label>
+<img src="../../../assets/images/Family.jpg" alt="Logo">
+
+<form [formGroup]="form" (submit)="LogIn()">
+
+    <mat-form-field appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <input formControlName="Email" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input type="Password" formControlName="Password" matInput>
+    </mat-form-field>
+
+    <div>
+        <button mat-flat-button routerLink="">Acceder</button>
+    </div>
+
+    <a routerLink='acount'>Crear cuenta</a>
+
+</form>

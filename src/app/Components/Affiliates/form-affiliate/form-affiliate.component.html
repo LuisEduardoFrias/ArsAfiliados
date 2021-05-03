@@ -49,11 +49,13 @@
 
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="example-form-field">
+    <mat-form-field appearance="outline">
 
         <mat-label>Fecha de registro*</mat-label>
 
-        <input type="date" formControlName="RegistrationDate" matInput>
+        <input formControlName="RegistrationDate" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
 
     </mat-form-field>
 
@@ -63,7 +65,7 @@
 
         <mat-select formControlName="PlanId">
 
-            <mat-option *ngFor="let i of Plans" [value]="i.Id">{{i.PlanName}}</mat-option>
+            <mat-option *ngFor="let i of Plans" [value]="i.id">{{i.planName}}</mat-option>
 
         </mat-select>
 

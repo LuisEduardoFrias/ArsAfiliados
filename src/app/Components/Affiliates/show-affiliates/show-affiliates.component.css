@@ -3,12 +3,20 @@ h2 {
     font-size: 50px;
 }
 
-mat-form-field {
-    margin-left: 10px;
-}
-
 div {
     margin-left: 10px;
     width: Calc(100% - 20px);
     height: Calc(100% - 30%);
+}
+
+table {
+    width: 100%;
+}
+
+app-verification {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
 }

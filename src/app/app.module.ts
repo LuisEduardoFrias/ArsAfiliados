@@ -9,48 +9,79 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './Modules/Material/material.module'
 
 import { MenuComponent } from './Components/Menu/menu.component';
+import { OptionsComponent } from './Components/Menu/options/options.component';
 import { HomeComponent } from './Components/Home/home.component';
 
 //Affiliates
 import { ShowAffiliatesComponent } from './Components/Affiliates/show-affiliates/show-affiliates.component';
 import { CreateAffiliateComponent } from './Components/Affiliates/create-affiliate/create-affiliate.component';
 import { UpdateAffiliateComponent } from './Components/Affiliates/update-affiliate/update-affiliate.component';
-import { ChangeStatusAffiliateComponent } from './Components/Affiliates/change-status-affiliate/change-status-affiliate.component';
+import { FormAffiliateComponent } from './Components/Affiliates/form-affiliate/form-affiliate.component';
 
 //Plans
 import { ShowPlansComponent } from './Components/Plan/show-plans/show-plans.component';
 import { CreatePlanComponent } from './Components/Plan/create-plan/create-plan.component';
 import { UpdatePlanComponent } from './Components/Plan/update-plan/update-plan.component';
-import { ChangeStatusPlanComponent } from './Components/Plan/change-status-plan/change-status-plan.component';
+import { FormPlanComponent } from './Components/Plan/form-plan/form-plan.component';
 
 //http
 import {HttpClientModule} from '@angular/common/http';
 import { ContainerComponent } from './Components/Container/container.component';
 import { UpdateAmountAffiliateComponent } from './Components/Affiliates/update-amount-affiliate/update-amount-affiliate.component';
-import { FormAffiliateComponent } from './Components/Affiliates/form-affiliate/form-affiliate.component';
 
 //services
 import { AffiliateService } from './Services/affiliate.service';
 import { PlanService } from './Services/plan.service';
 
+// account
+import { AccountComponent } from './Components/Account/account/account.component';
+
+// login
+import { LoginComponent } from './Components/login/login.component';
+import { CreateComponent } from './Components/Account/create/create.component';
+
+import { ErrorPageComponent } from './Components/error-page/error-page.component';
+
+//branch office
+import { CreateBranchOfficeComponent } from './Components/branch-offices/create-branch-office/create-branch-office.component';
+import { UpdateBranchOfficeComponent } from './Components/branch-offices/update-branch-office/update-branch-office.component';
+import { ShowBranchOfficeComponent } from './Components/branch-offices/show-branch-office/show-branch-office.component';
+import { FormBranchOfficeComponent } from './Components/branch-offices/form-branch-office/form-branch-office.component';
+
+import { VerificationComponent } from './Components/shared/verification/verification.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    OptionsComponent,
     HomeComponent,
     //affiliates
     ShowAffiliatesComponent,
     CreateAffiliateComponent,
     UpdateAffiliateComponent,
-    ChangeStatusAffiliateComponent,
+    FormAffiliateComponent,
     //plans
     ShowPlansComponent,
     CreatePlanComponent,
     UpdatePlanComponent,
-    ChangeStatusPlanComponent,
+    FormPlanComponent,
+    //
     ContainerComponent,
     UpdateAmountAffiliateComponent,
-    FormAffiliateComponent,
+    //login, account
+    AccountComponent,
+    LoginComponent,
+    CreateComponent,
+    //error
+    ErrorPageComponent,
+    //branch office
+    CreateBranchOfficeComponent,
+    UpdateBranchOfficeComponent,
+    ShowBranchOfficeComponent,
+    FormBranchOfficeComponent,
+    
+    VerificationComponent,
 
   ],
   imports: [
@@ -59,7 +90,6 @@ import { PlanService } from './Services/plan.service';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
-
   ],
   providers: [
     //affiliates

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Affiliate } from 'src/app/Models/affiliate.model';
+import { CreateAffiliate } from 'src/app/Models/affiliate/CreateAffiliate.model';
+import { AffiliateService } from 'src/app/Services/affiliate.service';
 
 
 @Component({
@@ -9,15 +10,21 @@ import { Affiliate } from 'src/app/Models/affiliate.model';
 })
 export class CreateAffiliateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private affiliateservices: AffiliateService) { }
     
   ngOnInit(): void {
 
   }
 
-  CreateAffiliate(affiliate:Affiliate){
-  
-    console.log(affiliate);
+  CreateAffiliate(affiliate: CreateAffiliate) {
+    
+    this.affiliateservices.CreateAffiliate(affiliate).subscribe(observer =>
+    {
+
+      debugger;
+      console.log(observer);
+
+     } )
 
   }
 }
