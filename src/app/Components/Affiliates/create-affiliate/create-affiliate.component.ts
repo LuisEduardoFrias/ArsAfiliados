@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateAffiliate } from 'src/app/Models/affiliate/CreateAffiliate.model';
-import { AffiliateService } from 'src/app/Services/affiliate.service';
+import { CreateAffiliate } from '../../../Models/affiliate/CreateAffiliate.model';
+import { AffiliateService } from '../../../Services/affiliate.service';
 
 
 @Component({

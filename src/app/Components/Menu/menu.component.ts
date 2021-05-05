@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { OptionsMenu } from 'src/app/Models/optionmenu/OptionsMenu';
-import { SubMenu } from 'src/app/Models/optionmenu/SubMenu';
-import { AuthService } from 'src/app/Services/auth.service';
+import { OptionsMenu } from '../../Models/optionmenu/OptionsMenu';
+import { SubMenu } from '../../Models/optionmenu/SubMenu';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-menu',

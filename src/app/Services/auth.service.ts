@@ -13,7 +13,7 @@ export class AuthService {
   ChangeLogin(isLogin: boolean) {
     debugger;
     this.login = isLogin;
-    this.Rol = "Branche"
+    this.Rol = "Adm"
   }
 
 

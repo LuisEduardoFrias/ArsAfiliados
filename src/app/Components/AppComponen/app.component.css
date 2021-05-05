@@ -2,6 +2,7 @@ div {
     margin: 20px;
 }
 
+
 mat-toolbar {
     background: black;
     margin-bottom: 30px;
@@ -28,6 +29,7 @@ label {
     border: 1px solid lightgray;
     border-radius: 15px 15px 15px 15px;
     float: right;
+    overflow-x: auto;
 }
 
 .container {
@@ -37,6 +39,7 @@ label {
     border: 1px solid lightgray;
     border-radius: 0px 15px 15px 0px;
     float: right;
+    overflow-x: auto;
 }
 
 #DivProfile {

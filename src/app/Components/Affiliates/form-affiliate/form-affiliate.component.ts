@@ -1,10 +1,10 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Utilities } from 'src/app/Utilities/utilities';
-import { PlanService } from 'src/app/Services/plan.service';
+import { Utilities } from '../../..//Utilities/utilities';
+import { PlanService } from '../../..//Services/plan.service';
 import { DatePipe } from '@angular/common';
-import { CreateAffiliate } from 'src/app/Models/affiliate/CreateAffiliate.model';
+import { CreateAffiliate } from '../../..//Models/affiliate/CreateAffiliate.model';
 
 @Component({
   selector: 'app-form-affiliate',
@@ -21,6 +21,9 @@ export class FormAffiliateComponent extends Utilities implements OnInit {
   @Output()
   OnSubmit: EventEmitter<CreateAffiliate> = new EventEmitter<CreateAffiliate>();
 
+  @Input()
+  form_: FormGroup = null;
+
   Plans = [];
   
   form: FormGroup;
@@ -32,20 +35,27 @@ export class FormAffiliateComponent extends Utilities implements OnInit {
       this.Plans = observer;
     })
 
-    this.form = this.formbuild.group(
+    if(this.form_ == null)
+    {
+      this.form = this.formbuild.group(
       {
-        IdentificationCard:   ['', {Validators:[Validators.required, Validators.max(11)]}],
-        Name:                 ['', {Validators:[Validators.required, Validators.max(25)]} ],
-        LastName:             ['', {Validators:[Validators.required, Validators.max(25)]}],
-        Date: this.datePipe.transform(new Date(), 'yyyy-MM-dd'),
-        Nacionality: '',
-        Sex:                  ['', {Validators: [Validators.required]}],
-        SocialSecurityNumber: ['', {Validators: [Validators.required]}],
-        RegistrationDate:     ['', {Validators: [Validators.required]}],
-        AmountConsumed: 0,
-        Status: true,
-        PlanId: [0 , {Validators: [Validators.required]}],
+        identificationCard:   ['', {Validators:[Validators.required, Validators.max(11)]}],
+        name:                 ['', {Validators:[Validators.required, Validators.max(25)]} ],
+        lastName:             ['', {Validators:[Validators.required, Validators.max(25)]}],
+        dateTime:              this.datePipe.transform(new Date(), 'yyyy-MM-dd'),
+        nacionality:           '',
+        sex:                  ['', {Validators: [Validators.required]}],
+        socialSecurityNumber: ['', {Validators: [Validators.required]}],
+        registrationDate:     ['', {Validators: [Validators.required]}],
+        amountConsumed:        0,
+        status:                true,
+        planId:               [0 , {Validators: [Validators.required]}],
       });
+    }
+    else
+    {
+      this.form = this.form_;
+    }
   }
 
   ErrorFields(field: string)

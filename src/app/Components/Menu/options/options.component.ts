@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { OptionsMenu } from 'src/app/Models/optionmenu/OptionsMenu';
+import { OptionsMenu } from '../../../Models/optionmenu/OptionsMenu';
 
 @Component({
   selector: 'app-options',

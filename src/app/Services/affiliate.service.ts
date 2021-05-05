@@ -15,18 +15,11 @@ export class AffiliateService extends HttpService{
         super();
     }
   
-  ShowAffiliate(): Observable<ShowAffiliate[]>{
+  GetAllAffiliate(): Observable<ShowAffiliate[]>{
     return this.httpclien.get<ShowAffiliate[]>(`${this.apiUrl}api/affiliate/`,
       { headers: { "Accept": "application/vnd.arsaffiliate.ado.get.affiliates+json" } });
   }
 
-
-  SearchAffiliate(search:string): Observable<ShowAffiliate[]> {
-    return this.httpclien.get<ShowAffiliate[]>(`${this.apiUrl}api/affiliate/${search}`,
-      { headers: { "Accept": "application/vnd.arsaffiliate.ado.get.seach.affiliate+json" } });
-  }
-  
-  
   CreateAffiliate(affiliate: CreateAffiliate) : Observable<any> {
     return this.httpclien.post(`${this.apiUrl}api/affiliate`,
       affiliate,
